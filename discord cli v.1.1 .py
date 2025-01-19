@@ -13,6 +13,25 @@ def barr(leng, char):
         retval=retval+char
     return(retval)
 
+def message(user, content):
+    if len(user) > len(content):
+        ulen=len(user)
+        clen=len(content)
+        temp=clen+1
+        print("┌"+barr(ulen, "─")+'┐')
+        print(user+' │')
+        print("│"+content+barr(ulen-temp+1, ' ')+'│')
+        print("└"+barr(ulen, "─")+'┘')
+
+    elif len(user) < len(content):
+        ulen=len(user)
+        clen=len(content)
+        temp=clen-ulen
+        print("┌"+barr(clen, "─")+'┐')
+        print(user+barr(temp+1, " ")+'│')
+        print("│"+content+'│')
+        print("└"+barr(clen, "─")+'┘')
+
 t5m=[]
 t5ma=[]
 
@@ -57,28 +76,9 @@ def messages():
         rendert5m.extend(t5m)#copy message lists to rendering lists
         rendert5ma.extend(t5ma)
         for i in t5ma:
-            tml=len(t5m[0]) #current message length
-            if len(str(i)) > tml: #username longer
-                ulen=len(str(i))
-                clen=len(rendert5m[0])
-                temp=clen+1
-                print("┌"+barr(ulen, "─")+'┐')
-                print(str(i)+' │')
-                print("│"+rendert5m[0]+barr(ulen-temp+1, ' ')+'│')
-                print("└"+barr(ulen, "─")+'┘')
-                del rendert5m[0]
-                del rendert5ma[0]
-
-            elif len(str(i)) < tml: #message content is larger
-                ulen=len(str(i))
-                clen=len(rendert5m[0])
-                temp=clen-ulen
-                print("┌"+barr(clen, "─")+'┐')
-                print(str(i)+barr(temp+1, " ")+'│')
-                print("│"+rendert5m[0]+'│')
-                print("└"+barr(clen, "─")+'┘')
-                del rendert5m[0]
-                del rendert5ma[0]
+            message(rendert5ma[0], rendert5m[0])
+            del rendert5m[0]
+            del rendert5ma[0]
     #sending system goes here↓
         
 
@@ -89,21 +89,4 @@ def savedmess():
     print("work")
 
 client.run('bot token goes here') #bot token
-
-
-#description
-#discord cli is a python based cli discord messaging system, and bot commands
-
-#features
-#CURRENT
-#message reading system
-#text based ui
-#WILL BE ADDED
-#message sending system
-#bot commands
-#channel selector
-#quick response messaging system
-#
-
-
 
