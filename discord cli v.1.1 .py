@@ -13,7 +13,7 @@ def barr(leng, char):
         retval=retval+char
     return(retval)
 
-def message(user, content):
+def box(user, content):
     if len(user) > len(content):
         ulen=len(user)
         clen=len(content)
@@ -76,7 +76,7 @@ def messages():
         rendert5m.extend(t5m)#copy message lists to rendering lists
         rendert5ma.extend(t5ma)
         for i in t5ma:
-            message(rendert5ma[0], rendert5m[0])
+            box(rendert5ma[0], rendert5m[0])
             del rendert5m[0]
             del rendert5ma[0]
     #sending system goes here↓
