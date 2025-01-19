@@ -88,7 +88,7 @@ def autobot():
 def savedmess():
     print("work")
 
-client.run('MTMwNjc3ODEwMjAwOTE3MTk3MQ.Ghqslc.3jjA-M5NhlRehPQxya1Fe8BeocdbJlvgi7UobI') #bot token
+client.run('bot token goes here') #bot token
 
 
 #description
