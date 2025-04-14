@@ -1,10 +1,10 @@
 import os
 import discord
-import keyboard
+import keyboard as k
 import sys
 #─│┌┐└┘↑↓
 
-channel = client.get_channel(1306777879090298943)
+channel = discord.client.get_channel(1306777879090298943)
 intents = discord.Intents.default()
 intents.message_content = True
 
@@ -82,8 +82,8 @@ def messages():
                 del rendert5m[0]                        #clears the first element in the rendering lists
                 del rendert5ma[0]
                                                         #sending system goes here↓
-
-        if ispressed("s"):
+        async def send_message() :
+        if k.ispressed("s") = True:
             await channel.send(input("send: "))
 
 
