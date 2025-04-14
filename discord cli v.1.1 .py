@@ -83,8 +83,8 @@ def messages():
                 del rendert5ma[0]
                                                         #sending system goes here↓
         async def send_message() :
-        if k.ispressed("s") = True:
-            await channel.send(input("send: "))
+            if k.ispressed("s") == True :
+                await channel.send(input("send: "))
 
 
 def autobot():
