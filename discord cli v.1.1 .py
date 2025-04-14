@@ -4,6 +4,7 @@ import keyboard
 import sys
 #─│┌┐└┘↑↓
 
+channel = client.get_channel(1306777879090298943)
 intents = discord.Intents.default()
 intents.message_content = True
 
@@ -58,29 +59,33 @@ def mainmenu(name):
 def messages():
     os.system("cls")
     print("press s to send a message")
-    @client.event
+    while True :
+        @client.event
                                                         #receiving system↓
-    async def on_message(message):                      #activated when a message is sent by anyone
-        os.system("cls")
-        print("press s to send a message")
-        if len(t5m) < 5:                                #to keep the message count ≤ 5
-            t5m.append(str(message.content))
-            t5ma.append(str(message.author))
-        else:
-            del t5m[0]
-            del t5ma[0]
-            t5m.append(str(message.content))
-            t5ma.append(str(message.author))
-        rendert5m = []                                  #clear rendering lists
-        rendert5ma = []
-        rendert5m.extend(t5m)                           #copy message lists to rendering lists
-        rendert5ma.extend(t5ma)
-        for i in t5ma:                                  #rendering system
-            box(rendert5ma[0], rendert5m[0])            #renders message box
-            del rendert5m[0]                            #clears the first element in the rendering lists
-            del rendert5ma[0]
+        async def on_message(message):                  #activated when a message is sent by anyone
+            os.system("cls")
+            print("press s to send a message")
+            if len(t5m) < 5:                            #to keep the message count ≤ 5
+                t5m.append(str(message.content))
+                t5ma.append(str(message.author))
+            else:
+                del t5m[0]
+                del t5ma[0]
+                t5m.append(str(message.content))
+                t5ma.append(str(message.author))
+            rendert5m = []                              #clear rendering lists
+            rendert5ma = []
+            rendert5m.extend(t5m)                       #copy message lists to rendering lists
+            rendert5ma.extend(t5ma)
+            for i in t5ma:                              #rendering system
+                box(rendert5ma[0], rendert5m[0])        #renders message box
+                del rendert5m[0]                        #clears the first element in the rendering lists
+                del rendert5ma[0]
                                                         #sending system goes here↓
-        
+
+        if ispressed("s"):
+            await channel.send(input("send: "))
+
 
 def autobot():
     print("work")
