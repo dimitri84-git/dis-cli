@@ -4,10 +4,11 @@ dis-cli is a python based cli discord messaging system, with bot commands<br>
 ### current<br>
 message recieving system<br>
 text based ui
+messaging
 ### will be added<br>
-message sending system (currently working on. need help)<br>
 bot commands<br>
 channel selector<br>
 quick response messaging system<br>
 ## known bugs<br>
 •some visual glitching when sending long messages but nothing major
+•messages still send when going back to menu but im too lazy to fix that
