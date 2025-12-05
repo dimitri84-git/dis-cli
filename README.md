@@ -5,6 +5,8 @@ dis-cli is a python based cli discord messaging system, with bot commands<br>
 message recieving system<br>
 text based ui
 messaging
+save msgs kinda buggy but works
+
 ### will be added<br>
 bot commands<br>
 channel selector<br>
