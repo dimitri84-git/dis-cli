@@ -3,8 +3,8 @@ dis-cli is a python based cli discord messaging system, with bot commands<br>
 ## features<br>
 ### current<br>
 message recieving system<br>
-text based ui
-messaging
+text based ui<br>
+messaging<br>
 save msgs kinda buggy but works
 
 ### will be added<br>
